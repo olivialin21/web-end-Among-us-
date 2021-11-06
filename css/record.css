@@ -1,0 +1,27 @@
+td,th{
+  border-left: 1px #e4e4e4 solid;
+}
+tr:nth-child(even){
+  background-color: #f3f3f3;
+}
+.record-block{
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+.record-block p {
+  margin-bottom: 0;
+}
+.record-block .record-identity{
+  font-weight: bold;
+}
+.crew-head{
+  height: 4rem;
+  width: 4rem;
+}
+.google-btn{
+  position: absolute;
+  z-index: 9;
+  top: 5px;
+  right: 5px;
+}

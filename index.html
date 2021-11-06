@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/main.css">
+    <title>Among Us</title>
+  </head>
+  <body>
+    <div class="victory">
+      <img src="images/victory.jpg" alt="">
+      <div class="input-group victory-input">
+        <div class="input-group-prepend">
+          <span class="input-group-text">玩家名稱</span>
+        </div>
+        <input type="text" id="victory-player-name" class="main-group">
+        <div class="input-group-append">
+          <button id="victory-btn" class="btn btn-primary" type="button">儲存記錄</button>
+        </div>
+      </div>
+      <div class="victory-btn">
+        <a href="index.html">
+          <button class="btn btn-light">重新開始</button>
+        </a>
+        <a target="_blank" href="record.html">
+          <button class="btn btn-light ml-3">遊戲紀錄</button>
+        </a>
+      </div>
+    </div>
+    <div class="defeat">
+      <img src="images/defeat.jpg" alt="">
+      <div class="input-group defeat-input">
+        <div class="input-group-prepend">
+          <span class="input-group-text">玩家名稱</span>
+        </div>
+        <input type="text" id="defeat-player-name" class="main-group">
+        <div class="input-group-append">
+          <button id="defeat-btn" class="btn btn-primary" type="button">儲存記錄</button>
+        </div>
+      </div>
+      <div class="defeat-btn">
+        <a href="index.html">
+          <button class="btn btn-light">重新開始</button>
+        </a>
+        <a target="_blank" href="record.html">
+          <button class="btn btn-light ml-3">遊戲紀錄</button>
+        </a>
+      </div>
+    </div>
+    <div class="ejectedAnimation">
+      <img id="ejected-bg" class="ejected-bg" src="images/stars.png" alt="">
+      <img id="ejected-red" class="ejected-crew" src="images/red.png" alt="">
+      <img id="ejected-blue" class="ejected-crew" src="images/blue.png" alt="">
+      <img id="ejected-green" class="ejected-crew" src="images/green.png" alt="">
+      <img id="ejected-white" class="ejected-crew" src="images/white.png" alt="">
+      <img id="ejected-pink" class="ejected-crew" src="images/pink.png" alt="">
+      <img id="ejected-orange" class="ejected-crew" src="images/orange.png" alt="">
+      <h1 id="ejected-text"></h1>
+    </div>
+    <div class="bg">
+      <div class="vote-phone">
+        <div class="vote-phone-screen">
+          <div class="vote-title">
+            <h1>Who Is The Imposter?</h1>
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#README">
+              README
+            </button>
+          </div>
+          <div class="vote-crews row" id="vote-crews">
+
+          </div>
+        </div>
+        <div class="vote-phone-btn"></div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="README" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle">遊戲說明</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            歡迎遊玩Among Us單人遊玩版！以下為遊戲流程說明：<br>
+            <ol>
+              <li>場上有一名冒充者（Imposter）及五位船員（Crewmate），您需一人分飾六角進行投票，幫各角色選擇「想投的對象」及「原因」，並按下「VOTE」進行投票，投完票後即不可再更改選項。</li>
+              <li>全部角色都完成投票流程後，會驅逐票數最高的船員，若被驅逐的成員身分為船員，遊戲將繼續進行。</li>
+              <li>您需幫助船員獲勝，船員的獲勝條件為<strong>「驅逐冒充者」</strong>，若場上僅剩下一名船員及冒充者，則冒充者獲勝。</li>
+              <li>若有其他人和最高票者票數相同，則無人出局。</li>
+              <li>完成一場遊戲後，會儲存本局紀錄，可至下方按鈕連結觀看。</li>
+            </ol>
+            提示：因無判斷依據，請老師隨機選擇原因進行投票QQ，為方便測試遊戲結果，預設<strong>綠色（WEB）</strong>為冒充者。<br>
+            <br>
+            感謝您的遊玩！
+          </div>
+          <div class="modal-footer">
+            <a class="m-auto" target="_blank" href="record.html">
+              <button type="button" class="btn btn-primary">
+                遊戲紀錄
+              </button>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+  <template id="template-crew" style="display: none">
+    <div class="col-6">
+      <div class="vote-crew">
+        <div class="ejected" id="EJECTED_HERE"></div>
+        <div class="vote-crew-img">
+          <img src="IMG_HERE" alt="">
+          <p>NAME_HERE</p>
+        </div>
+        <div class="vote-crew-text">
+          <div class="input-group mb-1 main-group">
+            <div class="input-group-prepend">
+              <label class="input-group-text" for="SUS_HERE">Who is the Imposter?</label>
+            </div>
+            <select class="custom-select" id="SUS_HERE" name="userIdentity">
+              <option disabled selected value>choose</option>
+              <option class="option-red" value="red">red</option>
+              <option class="option-blue" value="blue">blue</option>
+              <option class="option-green" value="green">green</option>
+              <option class="option-white" value="white">white</option>
+              <option class="option-pink"  value="pink">pink</option>
+              <option class="option-orange" value="orange">orange</option>
+            </select>
+          </div>
+          <div class="input-group mb-3">
+            <div class="input-group mb-1 main-group">
+              <div class="input-group-prepend">
+                <label class="input-group-text" for="REASON_HERE">The reason is :</label>
+              </div>
+              <select class="custom-select" id="REASON_HERE" name="userIdentity">
+                <option disabled selected value>choose</option>
+                <option value="我看到他鑽地洞">我看到他鑽地洞</option>
+                <option value="我看到他殺人">我看到他殺人</option>
+                <option value="他在案發現場旁">他在案發現場旁</option>
+                <option value="他好壞他好壞">他好壞他好壞</option>
+                <option value="窩不知道">窩不知道</option>
+              </select>
+            </div>
+          </div>
+          <div class="input-group-append d-flex align-items-center">
+            <span class="voteNum" id="VOTE_HERE"></span>
+            <button class="btn btn-secondary ml-auto" type="button" id="BTN_HERE">VOTE</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </template>
+  <template id="tipTemplate01" style="display:none;">
+    <div class="tip">
+      <i class="fa fa-exclamation-circle"></i>
+    </div>
+  </template>
+</html>
